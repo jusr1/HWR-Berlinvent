@@ -19,16 +19,21 @@ import java.util.ArrayList;
 public class MainMenu extends AppCompatActivity implements View.OnClickListener {
 
     public String apikey="QNgn6PCmNLN9HF9J";
+
+    public String base_url="http://api.eventful.com";
     public TextView t1;
     Button btn1, btn2, btn3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
+        System.out.println("HALLO");
         try {
             APIConfiguration apic = new APIConfiguration();
-            apic.setApiKey(apikey);
+            APIConfiguration.setApiKey(apikey);
+            APIConfiguration.setBaseURL(base_url);
+            System.out.println("HALLO");
 
         }catch(Exception e){
             System.out.println("key fehler");
@@ -49,6 +54,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick (View v) {
         if (v.getId() == R.id.button1)
+            System.out.println("HALLO2");
             t1.setText(getEventRequest().toString());
         if (v.getId() == R.id.button2)
             t1.setText("Button 2 gedrückt");
@@ -70,6 +76,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         SearchResult sr = null;
         try {
             sr = eo.search(esr);
+
             System.out.println(sr.getEvents().get(1).getTitle());
             if (sr.getTotalItems() > 1) {
 
@@ -77,6 +84,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
             }
         }catch(EVDBRuntimeException var){
             System.out.println("1Opps got runtime an error...");
+            System.out.println(var.toString());
 
         } catch( EVDBAPIException var){
             System.out.println("2Opps got runtime an error...");
