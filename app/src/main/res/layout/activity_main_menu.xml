@@ -32,6 +32,7 @@
         android:text="@string/menu_point_2"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         tools:text="@string/menu_point_2"
+        android:onClick="sendMessageR"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/textmain"
         android:layout_marginLeft="92dp"
