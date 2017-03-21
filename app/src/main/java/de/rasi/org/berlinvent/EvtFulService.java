@@ -15,5 +15,7 @@ import retrofit2.http.*;
 public interface EvtFulService {
     @GET("events/search")
     Call<Eventlist> listLocation(@Query("location") String loc, @Query("app_key") String appkey);
+    @GET("events/search")
+    Call<List<Event>> listLocation2(@Query("location") String loc, @Query("app_key") String appkey);
 }
 

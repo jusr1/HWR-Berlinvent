@@ -15,8 +15,8 @@ import java.util.List;
 public class Eventlist {
 
 
-        @ElementList(entry="events", inline=true, required = false)
-        @Path("search")
+        @ElementList(name="events", required = false) //inline=true,
+        //@Path("search/events")
         private List<Event> events;
 
         public Eventlist(){};
