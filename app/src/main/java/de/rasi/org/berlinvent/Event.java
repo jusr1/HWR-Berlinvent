@@ -7,6 +7,8 @@ import org.simpleframework.xml.Root;
 import retrofit2.http.Path;
 import org.simpleframework.xml.*;
 
+import java.util.List;
+
 /**
  * Created by Justin on 20.03.2017.
  */
@@ -20,40 +22,48 @@ import org.simpleframework.xml.*;
     private String endtime;
     private String imgurl;*/
 
-    @Root(name = "search",strict=false)
+    @Root(name = "search/events/event",strict=false)
     public class Event {
         @Attribute(name = "id", required = false)
-        @org.simpleframework.xml.Path("events/event")
+        //@org.simpleframework.xml.Path("events")
         private String id;
 
         @Element(name = "title", required = false)
-        @org.simpleframework.xml.Path("events/event")
+        //@org.simpleframework.xml.Path("events")
         private String title;
 
         @Element(name = "description", required = false)
-        @org.simpleframework.xml.Path("events/event")
+        //@org.simpleframework.xml.Path("event")
         private String description;
 
         @Element(name = "url", required = false)
-        @org.simpleframework.xml.Path("events/event")
+        //@org.simpleframework.xml.Path("event")
         private String url;
 
         @Element(name = "start_time", required = false)
-        @org.simpleframework.xml.Path("events/event")
+        //@org.simpleframework.xml.Path("event")
         private String start_time;
 
         @Element(name = "stop_time", required = false)
-        @org.simpleframework.xml.Path("events/event")
+        //@org.simpleframework.xml.Path("event")
         private String stop_time;
 
 
+        @Element(name="image", required = false) //inline=true,
+        private EventImage img;
 
 
-        /*@Attribute(required = false)
-        private String link;*/
 
-        public Event() {
-        }
+    public Event() {
+    }
+
+    public EventImage getImg() {
+        return img;
+    }
+
+    public void setImg(EventImage img) {
+        this.img = img;
+    }
 
     public void setId(String id) {
         this.id = id;
