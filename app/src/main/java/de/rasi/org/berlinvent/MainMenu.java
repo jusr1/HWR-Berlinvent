@@ -11,13 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.evdb.javaapi.APIConfiguration;
-import com.evdb.javaapi.EVDBAPIException;
-import com.evdb.javaapi.EVDBRuntimeException;
-import com.evdb.javaapi.data.Event;
-import com.evdb.javaapi.data.SearchResult;
-import com.evdb.javaapi.data.request.EventSearchRequest;
-import com.evdb.javaapi.operations.EventOperations;
+//import com.evdb.javaapi.APIConfiguration;
+//import com.evdb.javaapi.EVDBAPIException;
+//import com.evdb.javaapi.EVDBRuntimeException;
+//import com.evdb.javaapi.data.Event;
+//import com.evdb.javaapi.data.SearchResult;
+//import com.evdb.javaapi.data.request.EventSearchRequest;
+//import com.evdb.javaapi.operations.EventOperations;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
