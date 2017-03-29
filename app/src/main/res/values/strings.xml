@@ -4,6 +4,7 @@
     <string name="menu_point_2">Kartenansicht</string>
     <string name="menu_point_3">Suche</string>
     <string name="startmessage">Willkommen bei Berlinvent!\nFinde neue Events!</string>
+    <string name="loading">Ladevorgang...</string>
     <string name="title_activity_maps">Map</string>
     <string name="api_key">QNgn6PCmNLN9HF9J</string>
 </resources>

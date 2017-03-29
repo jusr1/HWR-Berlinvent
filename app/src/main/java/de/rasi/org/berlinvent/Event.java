@@ -7,23 +7,20 @@ import org.simpleframework.xml.Root;
 import retrofit2.http.Path;
 import org.simpleframework.xml.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Justin on 20.03.2017.
+ * Mappen der Infos aus der XML-Antwort
+ * Der Path lautet /search/events/event (Mit ID)
+ * Attribut ist hier ein eindeutiger Beschreiber, sodass mehrere "Event"-Objekte aus der
+ * XML erhalten werden können, mit x Elementen
+ * Eventimage wurde nochmal aufgegliedert, siehe auch EventImage
  */
 
-
-    /*private String id;
-    private String title;
-    private String url;
-    private String descr;
-    private String starttime;
-    private String endtime;
-    private String imgurl;*/
-
     @Root(name = "search/events/event",strict=false)
-    public class Event {
+    public class Event implements Serializable{
         @Attribute(name = "id", required = false)
         //@org.simpleframework.xml.Path("events")
         private String id;
@@ -48,6 +45,14 @@ import java.util.List;
         //@org.simpleframework.xml.Path("event")
         private String stop_time;
 
+        @Element(name = "latitude",required = false)
+        private float lat;
+
+        @Element(name = "longitude", required = false)
+        private float lon;
+
+        @Element(name = "venue_name", required = false)
+        private String venuename;
 
         @Element(name="image", required = false) //inline=true,
         private EventImage img;
@@ -55,6 +60,43 @@ import java.util.List;
 
 
     public Event() {
+    }
+
+    @Override
+    public String toString() {
+        return "Event:"+this.getTitle()
+                +"\n\nBeschreibung:"+this.getDescription()
+                +"\nID:"+this.getId()
+                +"\nAnfang:"+this.getStart_time()
+                +"\nEnde:"+this.getStop_time()
+                +"\nOrt:"+this.getVenuename()
+                +"\nLatitude:"+this.getLat()
+                +"\nLongitue:"+this.getLon()
+                +"\n-----------------\n";
+    }
+
+    public float getLat() {
+        return lat;
+    }
+
+    public void setLat(float lat) {
+        this.lat = lat;
+    }
+
+    public float getLon() {
+        return lon;
+    }
+
+    public void setLon(float lon) {
+        this.lon = lon;
+    }
+
+    public String getVenuename() {
+        return venuename;
+    }
+
+    public void setVenuename(String venuename) {
+        this.venuename = venuename;
     }
 
     public EventImage getImg() {

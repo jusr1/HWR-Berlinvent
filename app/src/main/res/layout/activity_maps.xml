@@ -1,8 +1,93 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:id="@+id/mainview"
+android:layout_width="fill_parent"
+android:layout_height="match_parent"
+tools:context="de.rasi.org.berlinvent.MainMenu"
+android:weightSum="13">
+
+<ProgressBar
+    android:id="@+id/mainProgressBar"
+    style="?android:attr/progressBarStyleHorizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="de.rasi.org.berlinvent.MapsActivity" />
+    android:layout_height="wrap_content"
+    android:max="100"
+    android:indeterminate="false"/>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="de.rasi.org.berlinvent.MapsActivity"
+        android:layout_weight="11"/>
+
+<RelativeLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/scrollMain"
+    android:layout_weight="2">
+
+    <Button
+
+        android:textColor="#FFFFFF"
+        android:id="@+id/button3"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:background="@drawable/epicbuttons"
+        android:text="@string/menu_point_3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:text="@string/menu_point_3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+
+        android:textColor="#FFFFFF"
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/epicbuttons"
+        android:text="@string/menu_point_2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:text="@string/menu_point_2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+
+
+    <Button
+
+        android:textColor="#FFFFFF"
+        android:id="@+id/button1"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/epicbuttons"
+        android:text="@string/menu_point_1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:text="@string/menu_point_1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+</RelativeLayout>
+
+</LinearLayout>
