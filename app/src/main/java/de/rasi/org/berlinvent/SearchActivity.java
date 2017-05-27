@@ -9,6 +9,7 @@ import android.widget.TextView;
 /**
  * Created by Justin on 21.03.2017.
  * Noch nicht eingepflegt!
+ * Ausblick für 3. Aktivität
  */
 
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener{

@@ -11,7 +11,9 @@ import retrofit2.http.*;
 /**
  * Created by Justin on 20.03.2017.
  * Hier werden Query-Objekte definiert, diese können in den Funktionen benutzt werden und mit Objekt-Bausteinen versehen werden
- * Teil von Retrofit
+ * Teil von "Retrofit"
+ *
+ * Die verschiedenen Querybegriffe werden auf die hier beschriebenen XML-Elemente der "Eventful"-XML-Datei gemappt
  */
 
 public interface EvtFulService {

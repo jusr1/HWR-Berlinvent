@@ -91,12 +91,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(berlin,12));
 
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
-            // Use default InfoWindow frame
+            // default
             @Override
             public View getInfoWindow(Marker arg0) {
                 return null;
             }
-            // Defines the contents of the InfoWindow
+            // Übergabe der Markerinfos
             @Override
             public View getInfoContents(Marker arg0) {
                 // Getting view from the layout file info_window_layout
@@ -110,12 +110,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 //set texts
                 tvDesc.setText("Beschreibung: "+arg0.getSnippet());
                 tvTitle.setText("Event: "+arg0.getTitle());
-                // Returning the view containing InfoWindow contents
                 return v;
             }
         });
         try{
         for(Event evt : elist.getMatches()){
+            /**
+             * Optimierung der dargestellten Marker auf der Google Karte (Texte und Beschreibung kürzen und anzeigen)
+             */
             try{
             if(evt.getDescription().length()>=100){
                 evt.setDescription(evt.getDescription().substring(0,100)+"...");

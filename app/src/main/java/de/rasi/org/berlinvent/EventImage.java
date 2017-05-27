@@ -11,6 +11,8 @@ import java.io.Serializable;
  * Der Path ist /search/events/event/image/...
  * Der Block Image hat verschiedene Image-URLs
  * Wir greifen nur auf die Basis-URL zu
+ *
+ * (Work in Progress)
  */
 @Root(name = "image",strict=false)
 public class EventImage implements Serializable{

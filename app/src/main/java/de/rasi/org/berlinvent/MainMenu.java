@@ -124,6 +124,9 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
+    /**
+     * Die Mainview soll hier mit einem neuen Text geupdatet werden
+     */
     public void updateTextViewMain(String toThis) {
         TextView textView = (TextView) findViewById(R.id.textmain);
         textView.setText(toThis);
